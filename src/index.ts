@@ -38,6 +38,11 @@ export default {
       return Response.redirect("https://uk.yourdomain.com" + url.pathname, 302);
     }
 
+    // 如果 IP 是英国 -> 302 去 UK 站
+    if (country === "US") { // 注意：英国代码通常是 GB
+      return Response.redirect("https://wenshan.space" + url.pathname, 302);
+    }
+
     // ... 其他国家规则
 
     // 如果 IP 是 US 或其他未定义国家 -> 放行，留在 US 站
